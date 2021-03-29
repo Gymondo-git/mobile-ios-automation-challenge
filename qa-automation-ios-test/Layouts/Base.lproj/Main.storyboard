@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,9 +29,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqJ-BT-nTe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqJ-BT-nTe">
                                 <rect key="frame" x="20" y="436" width="374" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +41,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zqJ-BT-nTe" firstAttribute="leading" secondItem="W7M-X4-y24" secondAttribute="leading" id="1eC-6q-b0Z"/>
                             <constraint firstItem="azj-nW-VNa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-100" id="3FS-se-K2j"/>
@@ -51,7 +54,6 @@
                             <constraint firstItem="W7M-X4-y24" firstAttribute="leading" secondItem="azj-nW-VNa" secondAttribute="leading" id="psl-9E-Hff"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="azj-nW-VNa" secondAttribute="trailing" constant="20" id="vpf-LS-bsb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="W7M-X4-y24" id="doG-W4-FdX"/>
@@ -70,7 +72,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dcp-3r-AUi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="7l1-OB-rQh" style="IBUITableViewCellStyleDefault" id="CT4-ZN-8D8">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -88,6 +90,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eot-QT-VGr" kind="show" identifier="showDetailSegue" id="ZfY-dH-2T5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -100,6 +105,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7h-b5-ENo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2074" y="139"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="KdZ-5S-Cei">
+            <objects>
+                <viewController id="eot-QT-VGr" customClass="DetailViewController" customModule="qa_automation_ios_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LyW-JI-sUO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-xf-F9t" userLabel="Workout Title">
+                                <rect key="frame" x="117.5" y="128" width="179.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout-equipment" translatesAutoresizingMaskIntoConstraints="NO" id="nCd-sm-hsh">
+                                <rect key="frame" x="57" y="241.5" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="13M-F6-9vl"/>
+                                    <constraint firstAttribute="width" constant="300" id="NwG-h9-8w2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M5S-6g-ZXb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nCd-sm-hsh" firstAttribute="top" secondItem="4fB-xf-F9t" secondAttribute="bottom" constant="80" id="2Gz-Z8-loD"/>
+                            <constraint firstItem="4fB-xf-F9t" firstAttribute="top" secondItem="M5S-6g-ZXb" secondAttribute="top" constant="40" id="Mkv-Nf-6PK"/>
+                            <constraint firstItem="nCd-sm-hsh" firstAttribute="centerX" secondItem="4fB-xf-F9t" secondAttribute="centerX" id="ZI6-aD-Tsb"/>
+                            <constraint firstItem="4fB-xf-F9t" firstAttribute="centerX" secondItem="LyW-JI-sUO" secondAttribute="centerX" id="jaQ-Vk-moT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pqw-se-lfL"/>
+                    <connections>
+                        <outlet property="workoutTitleLabel" destination="4fB-xf-F9t" id="RLt-LZ-HMM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urz-bH-Tih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3016" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OkC-Pa-iEg">
@@ -120,4 +165,13 @@
             <point key="canvasLocation" x="1164" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="workout-equipment" width="640" height="426"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
