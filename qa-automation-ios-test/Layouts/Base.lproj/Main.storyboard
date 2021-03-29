@@ -116,12 +116,16 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-xf-F9t" userLabel="Workout Title">
                                 <rect key="frame" x="117.5" y="128" width="179.5" height="33.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="label_workout-title"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workout-equipment" translatesAutoresizingMaskIntoConstraints="NO" id="nCd-sm-hsh">
                                 <rect key="frame" x="57" y="241.5" width="300" height="300"/>
+                                <accessibility key="accessibilityConfiguration" identifier="image_workout-equipment">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="13M-F6-9vl"/>
                                     <constraint firstAttribute="width" constant="300" id="NwG-h9-8w2"/>
@@ -166,7 +170,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="workout-equipment" width="640" height="426"/>
+        <image name="workout-equipment" width="320" height="213"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
